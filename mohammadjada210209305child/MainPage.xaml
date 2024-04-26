@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mohammadjada210209305child.MainPage">
+    
+
+    <StackLayout>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+            <Image Source="boy.png"/>
+            
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Child" FontAttributes="Bold"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <StackLayout>
+                <Label Text="Name"/>
+                <Entry x:Name="name"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="last Name"/>
+                <Entry x:Name="lastName"/>
+            </StackLayout>
+            
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Birth Date"/>
+            <Entry x:Name="day"/>
+            <Entry x:Name="month"/>
+            <Entry x:Name="year"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <RadioButton x:Name="male" Content="Male"/>
+            <RadioButton x:Name="female" Content="Female"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Team" Grid.Row="1" Grid.Column="0"/>
+                <Image Source="ball.png" Grid.Row="0" Grid.Column="1"/>
+                <CheckBox x:Name="football" Grid.Row="1" Grid.Column="1"/>
+                <CheckBox x:Name="boat" Grid.Row="1" Grid.Column="2"/>
+                <Image Source="boat.png" Grid.Row="0" Grid.Column="2"/>
+                
+            </Grid>
+        </StackLayout>
+        <StackLayout Padding="4">
+            <Label Text="List" HorizontalOptions="Center" FontSize="Medium" />
+        </StackLayout>
+        <StackLayout BackgroundColor="Green">
+            <Button x:Name="add" Text="ADD" Clicked="add_Clicked" WidthRequest="100" HeightRequest="50" Background="white" TextColor="Black"/>
+        </StackLayout>
+        <StackLayout>
+            <ListView x:Name="listXaml">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Children's List" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center"/>
+                                <Label Text="{Binding name}"/>
+                                <Label Text="{Binding lastName}"/>
+                                <Label Text="{Binding dobDay}"/>
+                                <Label Text="{Binding dobMonth}"/>
+                                <Label Text="{Binding dobYear}"/>
+                                <Label Text="{Binding gender}"/>
+                                <Label Text="{Binding football}"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <StackLayout BackgroundColor="Green">
+            <Button x:Name="show" Text="SHOW" Clicked="show_Clicked" WidthRequest="100" HeightRequest="50" Background="white" TextColor="Black"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
